@@ -8,10 +8,15 @@ xhr.onreadystatechange = () => {
     if(xhr.readyState == 4 && xhr.status === 200)
     {
         const response = JSON.parse(xhr.responseText)
+        let max = response.length - 1
+        console.log(max)
+        
         var output = ' '
-        for(let i = 0; i < 20; i++)
+
+        //See the latest pictures created
+        for(let i = max; i > max - 30; i--)
         {
-            output += `<img src = ${response[i].thumbnailUrl} />`
+            output += `<a href = ${response[i].url} traget = "_blank"><img style = "margin: 1em" src = ${response[i].thumbnailUrl} alt = ${response[i].title}/></a>`
         }
 
         document.querySelector('#picture-container').innerHTML = output
