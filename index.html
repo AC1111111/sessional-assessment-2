@@ -22,12 +22,15 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home
+                        <a class="nav-link active" href="#picture-container">Home
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./upload.html">Create Picture</a>
+                        <a class="nav-link" href="#create-picture">Create Picture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#user-img">View Your Pictures</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -39,6 +42,33 @@
     </nav>
 
     <div id="picture-container"></div>
+
+    <h2 id="user-img">Your Images</h2>
+    <div id="user-pictures"></div>
+
+    <h2 id="create-picture">Create your own Picture</h2>
+    <div id="creating-picture">
+        <form method="post">
+            <fieldset>
+                <div class="form-group">
+                    <label for="title" class="form-label mt-4">Image Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Epic Picture">
+                </div>
+
+                <div class="form-group">
+                    <label for="img" class="form-label mt-4">Image</label>
+                    <input type="url" class="form-control" id="img" placeholder="Type in the Image's URL">
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label mt-4">Image Description</label>
+                    <textarea class="form-control" id="description" placeholder = "Something something" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+            </fieldset>
+        </form>
+    </div>
 
     <script src="./script.js"></script>
 </body>

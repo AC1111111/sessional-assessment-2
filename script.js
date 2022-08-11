@@ -14,9 +14,9 @@ xhr.onreadystatechange = () => {
         var output = ' '
 
         //See the latest pictures created
-        for(let i = max; i > max - 30; i--)
+        for(let i = max; i >= 0; i--)
         {
-            output += `<a href = ${response[i].url} traget = "_blank"><img style = "margin: 1em" src = ${response[i].thumbnailUrl} alt = ${response[i].title}/></a>`
+            output += `<a href = ${response[i].url} traget = "_blank"><img style = "margin: 1em" src = ${response[i].url} alt = ${response[i].title}/></a>`
         }
 
         document.querySelector('#picture-container').innerHTML = output
@@ -24,3 +24,6 @@ xhr.onreadystatechange = () => {
 }
 
 xhr.send()
+
+//Handle Image uploads
+document.getElementById('')
