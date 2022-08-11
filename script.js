@@ -16,7 +16,7 @@ xhr.onreadystatechange = () => {
         //See the latest pictures created
         for(let i = max; i >= 0; i--)
         {
-            output += `<a href = ${response[i].url} traget = "_blank"><img style = "margin: 1em" src = ${response[i].url} alt = ${response[i].title}/></a>`
+            output += `<a href = ${response[i].url} target = "_blank"><img style = "margin: 1em" src = ${response[i].url} alt = ${response[i].title}/></a>`
         }
 
         document.querySelector('#picture-container').innerHTML = output
@@ -26,4 +26,26 @@ xhr.onreadystatechange = () => {
 xhr.send()
 
 //Handle Image uploads
-document.getElementById('')
+
+//Store all images in a JSON in local storage
+const images = JSON.parse(localStorage.getItem('images')) || [];
+
+
+  $('#submit').on('click', () => {
+    const title = $('#title').val();
+    const url = $('#img').val();
+    const desc = $('#description').val();
+    images.push({ title, url, desc });      //push the new image into the JSON
+    console.log(images);
+    localStorage.setItem('images', JSON.stringify(images));
+    location.href = 'index.html';
+
+    var output = ``
+    for(let i = 0; i < images.length; i++)
+    {
+        output += `<a href = ${images[i].url} target = "_blank"><img style = "margin: 1em; width: 600px; height: 600px" src = ${images[i].url} alt = ${images[i].title}/></a>`
+    }
+
+    document.querySelector('#user-pictures').innerHTML = output
+
+  });
