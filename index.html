@@ -12,6 +12,7 @@
 
 <body>
 
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="./assets/logo.png" class="logo"></a>
@@ -33,19 +34,17 @@
                         <a class="nav-link" href="#user-img">View Your Pictures</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-sm-2" type="text" placeholder="Search for a Picture">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
-
+    <!--API Pictures loaded here-->
     <div id="picture-container"></div>
 
+    <!--User Pictures loaded here-->
     <h2 id="user-img">Your Images</h2><break></break>
     <div id="user-pictures"></div>
 
+    <!--User Upload Form-->
     <h2 id="create-picture">Create your own Picture</h2>
     <div id="creating-picture">
         <form id="user-input">
@@ -69,6 +68,15 @@
             </fieldset>
         </form>
     </div>
+    
+    <footer>
+        <span class="badge bg-primary">
+              <h4 >This is it.</h4>
+              <p >You persevered through that. Good job you! There’s  no reason to stop now though. Throw in some pictures of your own. 
+                Another fine addition to the collection is always welcome. </p>
+                <p>A website by Aditya Chanan (2010993023)</p>
+        </span>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
